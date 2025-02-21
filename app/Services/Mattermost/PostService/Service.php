@@ -4,8 +4,7 @@ declare(strict_types=1);
 
 namespace App\Services\Mattermost\PostService;
 
-use App\Contracts\Mattermost\AlfredPostServiceContract;
-use App\Contracts\Mattermost\WallePostServiceContract;
+use App\Contracts\Mattermost\PostServiceContract;
 use App\Exceptions\Mattermost\ServiceException;
 use App\Traits\Mattermost\CallEndpointMethod;
 use Arsentiyz\MattermostDriver\Endpoints\PostEndpoint;
@@ -15,7 +14,7 @@ use Arsentiyz\MattermostDriver\Requests\Post\UpdateRequest;
 use Arsentiyz\MattermostDriver\Responses\Post\CreateResponse;
 use Arsentiyz\MattermostDriver\Responses\Post\UpdateResponse;
 
-final readonly class Service implements WallePostServiceContract, AlfredPostServiceContract
+final readonly class Service implements PostServiceContract
 {
     use CallEndpointMethod;
 

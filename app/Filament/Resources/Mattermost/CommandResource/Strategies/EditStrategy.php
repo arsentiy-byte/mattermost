@@ -12,7 +12,6 @@ use Arsentiyz\MattermostDriver\Requests\Command\UpdateRequest;
 use Illuminate\Contracts\Container\BindingResolutionException;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\App;
-use Illuminate\Support\Str;
 
 final class EditStrategy
 {
@@ -28,16 +27,6 @@ final class EditStrategy
         $trigger = Arr::get($data, 'trigger');
         $username = Arr::get($data, 'username');
         $iconUrl = Arr::get($data, 'icon_url');
-
-        if (Str::contains($trigger, '@wall-e', true)) {
-            $username = self::getWalleUsername();
-            $iconUrl = self::getWalleIconUrl();
-        }
-
-        if (Str::contains($trigger, '@alfred', true)) {
-            $username = self::getAlfredUsername();
-            $iconUrl = self::getAlfredIconUrl();
-        }
 
         /** @var CommandServiceContract $service */
         $service = App::make(CommandServiceContract::class);

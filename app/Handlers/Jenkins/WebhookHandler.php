@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Handlers\Jenkins;
 
-use App\Contracts\Mattermost\WallePostServiceContract;
+use App\Contracts\Mattermost\PostServiceContract;
 use App\DTO\Jenkins\WebhookRequestDTO;
 use App\Enums\Jenkins\Phase;
 use App\Enums\Jenkins\Status;
@@ -18,7 +18,7 @@ final readonly class WebhookHandler
     use ConfigTrait;
 
     public function __construct(
-        private WallePostServiceContract $postService,
+        private PostServiceContract $postService,
     ) {
     }
 

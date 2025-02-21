@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Services\Mattermost\DialogService;
 
-use App\Contracts\Mattermost\AlfredDialogServiceContract;
+use App\Contracts\Mattermost\DialogServiceContract;
 use App\Exceptions\Mattermost\ServiceException;
 use App\Traits\Mattermost\CallEndpointMethod;
 use Arsentiyz\MattermostDriver\Endpoints\DialogEndpoint;
@@ -12,7 +12,7 @@ use Arsentiyz\MattermostDriver\Requests\Action\Dialog\OpenRequest;
 use Arsentiyz\MattermostDriver\Responses\Action\Dialog\OpenResponse;
 use Illuminate\Http\Client\ConnectionException;
 
-final readonly class Service implements AlfredDialogServiceContract
+final readonly class Service implements DialogServiceContract
 {
     use CallEndpointMethod;
 

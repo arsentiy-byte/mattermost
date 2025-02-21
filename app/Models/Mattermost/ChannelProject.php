@@ -20,8 +20,6 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  * @property-read Channel $channel
- * @property-read string $project_link
- * @property-read string $formatted_project_link
  * @property-read ProjectUser[]|Collection $attachedUsers
  */
 final class ChannelProject extends Model
@@ -51,27 +49,9 @@ final class ChannelProject extends Model
         'updated_at' => 'datetime',
     ];
 
-    /**
-     * @var array<int, string>
-     */
-    protected $appends = [
-        'project_link',
-        'formatted_project_link',
-    ];
-
     public function channel(): BelongsTo
     {
         return $this->belongsTo(Channel::class, 'channel_id', 'id');
-    }
-
-    public function getProjectLinkAttribute(): string
-    {
-        return sprintf('%s/projects/%s', self::getJiraHost(), $this->project);
-    }
-
-    public function getFormattedProjectLinkAttribute(): string
-    {
-        return sprintf('[%s](%s)', $this->project, $this->project_link);
     }
 
     public function attachedUsers(): HasMany

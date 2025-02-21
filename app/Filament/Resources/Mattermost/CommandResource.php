@@ -26,9 +26,7 @@ use Filament\Tables\Actions\CreateAction;
 use Filament\Tables\Actions\DeleteAction;
 use Filament\Tables\Actions\EditAction;
 use Filament\Tables\Columns\TextColumn;
-use Filament\Tables\Filters\Filter;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Artisan;
 
@@ -112,11 +110,6 @@ final class CommandResource extends Resource
                     )
                     ->requiresConfirmation()
                     ->action(fn (): int => Artisan::call(SyncCommandsCommand::class)),
-            ])
-            ->filters([
-                Filter::make('trigger')
-                    ->label('WALL-E')
-                    ->query(fn (Builder $query): Builder => $query->where('trigger', 'ilike', '%@wall-e%')),
             ]);
     }
 

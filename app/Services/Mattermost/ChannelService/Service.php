@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Services\Mattermost\ChannelService;
 
-use App\Contracts\Mattermost\AlfredChannelServiceContract;
+use App\Contracts\Mattermost\ChannelServiceContract;
 use App\Exceptions\Mattermost\ServiceException;
 use App\Traits\Mattermost\CallEndpointMethod;
 use Arsentiyz\MattermostDriver\Endpoints\ChannelEndpoint;
@@ -12,7 +12,7 @@ use Arsentiyz\MattermostDriver\Entities\Channel;
 use Arsentiyz\MattermostDriver\Responses\Channel\DirectResponse;
 use Illuminate\Http\Client\ConnectionException;
 
-final readonly class Service implements AlfredChannelServiceContract
+final readonly class Service implements ChannelServiceContract
 {
     use CallEndpointMethod;
 

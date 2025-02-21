@@ -15,4 +15,4 @@
 
 ## Библиотеки
 
-- [Mattermost](./vendor/arsentiyz/mattermost-driver/README.md#usage)
+- [Mattermost Driver](https://github.com/arsentiy-byte/mattermost-driver?tab=readme-ov-file) - драйвер для соединения с Mattermost

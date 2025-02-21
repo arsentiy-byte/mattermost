@@ -23,7 +23,5 @@ return [
     'menu' => [
         'settings' => 'Настройки',
         'mattermost' => 'Mattermost',
-        'bitrix' => 'Bitrix24',
-        'alfred' => 'Альфред',
     ]
 ];
